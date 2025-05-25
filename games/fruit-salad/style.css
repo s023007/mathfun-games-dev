@@ -1,0 +1,78 @@
+body {
+  font-family: 'Fredoka', sans-serif;
+  background-color: #f0f8ff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.game-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.character {
+  width: 120px;
+  margin-top: 20px;
+}
+
+.speech-bubble {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 15px;
+  display: inline-block;
+  margin-top: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.start-btn, .done-btn {
+  padding: 10px 25px;
+  margin-top: 15px;
+  border: none;
+  background-color: #5cb85c;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.game-screen {
+  margin-top: 30px;
+}
+
+.instruction {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  margin-bottom: 15px;
+}
+
+.blueberry-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.blueberry {
+  width: 60px;
+  height: 60px;
+  background-image: url('assets/blueberry.png');
+  background-size: cover;
+  cursor: pointer;
+}
+
+.box {
+  width: 250px;
+  height: 150px;
+  border: 3px dashed #a0522d;
+  margin: 20px auto;
+  border-radius: 15px;
+}
