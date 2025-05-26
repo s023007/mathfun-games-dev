@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fruit Salad Game</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Salad - Math Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="game-container">
+    <img src="images/background.png" class="background" alt="background">
+    <img src="images/character1.png" class="character" alt="character">
+    
+    <div class="speech-bubble" id="speech">
+        Hello! I'm going to make the biggest fruit salad in the world! Let's go shopping!
+    </div>
 
-<div class="game-container">
-  <div class="intro-screen">
-    <img src="assets/character.png" class="character" alt="Character">
-    <div class="speech-bubble">
-      <p>I REALLY want some cherries!</p>
-      <button class="start-btn">Let's Go!</button>
+    <button id="playAudio" class="audio-btn">🔊</button>
+
+    <div class="items-container">
+        <img src="images/blueberry.png" class="item draggable" id="item1" alt="Blueberry">
+        <img src="images/blueberry.png" class="item draggable" id="item2" alt="Blueberry">
+        <img src="images/box.png" class="box droppable" alt="Box">
     </div>
   </div>
 
-  <div class="game-screen hidden">
-    <div class="instruction">
-      <p>Put <span id="target-number">40</span> blueberries in the box.</p>
-    </div>
+  <audio id="voiceIntro" src="sounds/voice_intro.mp3"></audio>
+  <audio id="correctSound" src="sounds/correct.mp3"></audio>
+  <audio id="wrongSound" src="sounds/wrong.mp3"></audio>
 
-    <div class="blueberry-container">
-      <!-- سيُنشئ الـ JavaScript حبات التوت هنا -->
-    </div>
-
-    <div class="box"></div>
-    <button class="done-btn">Done</button>
-  </div>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
