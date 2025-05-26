@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fruit Salad - Math Game</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fruit Salad - MathFun Game</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="game-container">
-    <img src="images/background.png" class="background" alt="background">
-    <img src="images/character1.png" class="character" alt="character">
-    
-    <div class="speech-bubble" id="speech">
-        Hello! I'm going to make the biggest fruit salad in the world! Let's go shopping!
-    </div>
 
-    <button id="playAudio" class="audio-btn">🔊</button>
+<div class="game-container">
+  <img src="images/background.png" class="background">
 
-    <div class="items-container">
-        <img src="images/blueberry.png" class="item draggable" id="item1" alt="Blueberry">
-        <img src="images/blueberry.png" class="item draggable" id="item2" alt="Blueberry">
-        <img src="images/box.png" class="box droppable" alt="Box">
-    </div>
+  <img src="images/character1.png" class="character">
+
+  <div class="speech-bubble" id="speech">
+    Hello! I'm going to make the biggest fruit salad in the world!
   </div>
 
-  <audio id="voiceIntro" src="sounds/voice_intro.mp3"></audio>
-  <audio id="correctSound" src="sounds/correct.mp3"></audio>
-  <audio id="wrongSound" src="sounds/wrong.mp3"></audio>
+  <button id="playSpeech">🔊</button>
+  
+  <div class="items-container">
+    <img src="images/blueberry.png" class="item draggable" draggable="true">
+    <img src="images/box.png" class="box droppable">
+  </div>
+  
+  <button id="langToggle">عربي</button>
+</div>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
