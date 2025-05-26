@@ -1,60 +1,40 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const startBtn = document.querySelector('.start-btn');
-  const introScreen = document.querySelector('.intro-screen');
-  const gameScreen = document.querySelector('.game-screen');
-  const blueberryContainer = document.querySelector('.blueberry-container');
-  const doneBtn = document.querySelector('.done-btn');
-  const box = document.querySelector('.box');
-  const targetNumber = 40;
-  let boxCount = 0;
+// تشغيل الصوت التقديمي
+document.getElementById('playAudio').onclick = () => {
+    document.getElementById('voiceIntro').play();
+};
 
-  startBtn.onclick = () => {
-    introScreen.classList.add('hidden');
-    gameScreen.classList.remove('hidden');
-    generateBlueberries();
-  };
+// خاصية السحب والإفلات
+const items = document.querySelectorAll('.draggable');
+const box = document.querySelector('.droppable');
+const correctSound = document.getElementById('correctSound');
+const wrongSound = document.getElementById('wrongSound');
 
-  function generateBlueberries() {
-    for (let i = 0; i < 10; i++) {
-      const blueberry = document.createElement('div');
-      blueberry.classList.add('blueberry');
-      blueberry.dataset.value = "10";
-      blueberry.draggable = true;
-
-      blueberry.ondragstart = (e) => {
-        e.dataTransfer.setData('text/plain', '10');
-        e.dataTransfer.effectAllowed = 'move';
-      };
-
-      blueberryContainer.appendChild(blueberry);
-    }
-  }
-
-  box.ondragover = (e) => {
-    e.preventDefault();
-    e.dataTransfer.dropEffect = 'move';
-  };
-
-  box.ondrop = (e) => {
-    e.preventDefault();
-    const value = parseInt(e.dataTransfer.getData('text/plain'));
-    boxCount += value;
-    e.target.appendChild(document.querySelector('.blueberry-container .blueberry'));
-  };
-
-  doneBtn.onclick = () => {
-    if (boxCount === targetNumber) {
-      alert("Great Job! You counted correctly!");
-    } else {
-      alert(`Oops! You put ${boxCount}, try again!`);
-      resetGame();
-    }
-  };
-
-  function resetGame() {
-    boxCount = 0;
-    blueberryContainer.innerHTML = '';
-    box.innerHTML = '';
-    generateBlueberries();
-  }
+items.forEach(item => {
+    item.addEventListener('dragstart', dragStart);
 });
+
+box.addEventListener('dragover', dragOver);
+box.addEventListener('drop', dropItem);
+
+function dragStart(e) {
+    e.dataTransfer.setData('text/plain', e.target.id);
+}
+
+function dragOver(e) {
+    e.preventDefault();
+}
+
+function dropItem(e) {
+    e.preventDefault();
+    const id = e.dataTransfer.getData('text/plain');
+    const draggable = document.getElementById(id);
+
+    // تحقق بسيط (يمكنك توسعة المنطق هنا)
+    if(draggable.id === 'item1' || draggable.id === 'item2') {
+        box.src = "images/box.png";
+        draggable.style.display = 'none';
+        correctSound.play();
+    } else {
+        wrongSound.play();
+    }
+}
