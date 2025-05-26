@@ -1,70 +1,51 @@
 body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    font-family: 'Comic Sans MS', sans-serif;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: #e0f7fa;
+  margin: 0; padding: 0; overflow: hidden;
 }
 
 .game-container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
+  position: relative;
+  width: 100vw; height: 100vh;
 }
 
 .background {
-    width: 100%;
-    height: 100%;
-    position: absolute;
+  width: 100%; height: 100%; position: absolute;
 }
 
 .character {
-    position: absolute;
-    bottom: 5%;
-    left: 10%;
-    width: 200px;
-    animation: bounce 1.5s infinite;
+  position: absolute; bottom: 5%; left: 10%;
+  width: 150px; animation: float 2s infinite;
+}
+
+@keyframes float {
+  0%,100% {transform: translateY(0);}
+  50% {transform: translateY(-15px);}
 }
 
 .speech-bubble {
-    position: absolute;
-    bottom: 45%;
-    left: 25%;
-    width: 250px;
-    background: #fff;
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    font-size: 16px;
+  position: absolute; bottom: 45%; left: 20%;
+  background-color: #fff; border-radius: 10px;
+  padding: 10px 15px; box-shadow: 0 3px 10px rgba(0,0,0,0.3);
 }
 
-.audio-btn {
-    position: absolute;
-    bottom: 52%;
-    left: 23%;
-    font-size: 30px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
+#playSpeech {
+  position: absolute; bottom: 53%; left: 18%;
+  background: transparent; border: none;
+  font-size: 30px; cursor: pointer;
 }
 
 .items-container {
-    position: absolute;
-    bottom: 10%;
-    right: 10%;
-    display: flex;
-    gap: 20px;
+  position: absolute; bottom: 10%; right: 15%;
+  display: flex; gap: 20px;
 }
 
-.item {
-    width: 80px;
-    cursor: grab;
-}
+.item { width: 70px; cursor: grab; }
+.box { width: 120px; }
 
-.box {
-    width: 120px;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+#langToggle {
+  position: absolute; top: 20px; right: 20px;
+  padding: 5px 10px; cursor: pointer;
+  border: none; border-radius: 5px;
+  background: #4caf50; color: #fff;
 }
